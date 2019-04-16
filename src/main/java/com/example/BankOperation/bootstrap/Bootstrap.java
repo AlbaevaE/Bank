@@ -28,6 +28,7 @@ public class Bootstrap implements CommandLineRunner {
         Client cl1 = new Client();
         cl1.setName("Master");
         cl1.setActive(false);
+        cl1.setPhoneNumber("72342");
         clientService.addClient(cl1);
 
         Credit cr = new Credit();

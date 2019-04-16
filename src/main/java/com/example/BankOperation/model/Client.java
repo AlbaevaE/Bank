@@ -10,14 +10,16 @@ public class Client {
     private Long id;
     private String name;
     private boolean isActive;
+    private String phoneNumber;
 
     public Client() {
     }
 
-    public Client(Long id, String name, boolean isActive) {
+    public Client(Long id, String name, boolean isActive, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.isActive = isActive;
+        this.phoneNumber = phoneNumber;
     }
 
     public Long getId() {
@@ -42,5 +44,13 @@ public class Client {
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
