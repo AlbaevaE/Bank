@@ -6,6 +6,7 @@ import com.example.BankOperation.model.Credit;
 import com.example.BankOperation.service.BankService;
 import com.example.BankOperation.service.ClientService;
 import com.example.BankOperation.service.CreditService;
+import com.example.BankOperation.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,8 @@ public class Bootstrap implements CommandLineRunner {
 
     @Autowired
     private BankService bankService;
+    @Autowired
+    private PaymentService paymentService;
 
     @Override
     public void run(String... args) throws Exception {

@@ -16,6 +16,7 @@ public class Credit {
     @JoinColumn(name = "client_id")
     private Client client;
     private LocalDateTime time;
+    private boolean isPaid;
 
     public Credit() {
     }
@@ -37,6 +38,23 @@ public class Credit {
         } else {
             this.creditName = "Error";
         }
+    }
+
+    public Credit(Long id, String creditName, BigDecimal amount, Client client, LocalDateTime time, boolean isPaid) {
+        this.id = id;
+        this.creditName = creditName;
+        this.amount = amount;
+        this.client = client;
+        this.time = time;
+        this.isPaid = isPaid;
+    }
+
+    public boolean isPaid() {
+        return isPaid;
+    }
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
     }
 
     public Long getId() {
@@ -78,4 +96,6 @@ public class Credit {
     public void setTime(LocalDateTime time) {
         this.time = time;
     }
+
+
 }

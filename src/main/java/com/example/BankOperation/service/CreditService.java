@@ -15,4 +15,11 @@ public interface CreditService {
     Credit getCreditById(Long id);
 
     void deleteCreditById(Long id);
+
+    List<Credit> getPaidCredits();
+
+    List<Credit> getUnPaidCredits();
+
+    List<Credit> getOutDatedCredits();
+
 }
