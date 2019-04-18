@@ -35,8 +35,8 @@ public class PaymentController {
     }
 
     @GetMapping("/{id}")
-    private List<Payment> getAllPayment(@PathVariable Long id) {
-        return this.paymentService.getAllPayment(id);
+    private List<Payment> getPaymentHistory(@PathVariable Long id) {
+        return this.paymentService.getPaymentHistory(id);
     }
 
 //    @GetMapping("/{id}")

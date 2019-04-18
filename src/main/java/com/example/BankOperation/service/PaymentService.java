@@ -8,7 +8,7 @@ import java.util.List;
 public interface PaymentService {
 //    Credit addPayment(Payment p);
 //
-    List<Payment> getAllPayment(Long id);
+    List<Payment> getPaymentHistory(Long id);
 //
 //    Payment getPayment(Long id);
 //

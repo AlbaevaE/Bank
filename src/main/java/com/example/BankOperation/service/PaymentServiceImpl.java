@@ -78,7 +78,7 @@ public class PaymentServiceImpl implements PaymentService {
         return payment;
     }
     @Override
-    public List<Payment> getAllPayment(Long creditId) {
+    public List<Payment> getPaymentHistory(Long creditId) {
         List<Payment> payments = paymentRepository.findAll()
                 .stream()
                 .filter(
