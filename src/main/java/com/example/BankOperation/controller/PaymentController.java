@@ -2,6 +2,7 @@ package com.example.BankOperation.controller;
 
 import com.example.BankOperation.model.Credit;
 import com.example.BankOperation.model.Payment;
+import com.example.BankOperation.service.CardService;
 import com.example.BankOperation.service.CreditService;
 import com.example.BankOperation.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class PaymentController {
     private PaymentService paymentService;
     @Autowired
     private CreditService creditService;
+    @Autowired
+    private CardService cardService;
 
     @PostMapping("/credit/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -36,27 +39,27 @@ public class PaymentController {
         return this.paymentService.getAllPayment(id);
     }
 
-    @GetMapping("/{id}")
-    private Payment getOnePayment(@PathVariable Long id) {
-        return paymentService.getPayment(id);
-    }
-
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    private Credit addPayment(@RequestBody Payment p) {
-        return paymentService.addPayment(p);
-    }
-
-    @PutMapping
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    private Payment updatePayment(@RequestBody Payment p) {
-        return paymentService.updatePayment(p);
-    }
-
-    @DeleteMapping("/{id}")
-    private void deletePayment(@PathVariable Long id) {
-        paymentService.deletePayment(id);
-    }
+//    @GetMapping("/{id}")
+//    private Payment getOnePayment(@PathVariable Long id) {
+//        return paymentService.getPayment(id);
+//    }
+//
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    private Credit addPayment(@RequestBody Payment p) {
+//        return paymentService.addPayment(p);
+//    }
+//
+//    @PutMapping
+//    @ResponseStatus(HttpStatus.ACCEPTED)
+//    private Payment updatePayment(@RequestBody Payment p) {
+//        return paymentService.updatePayment(p);
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    private void deletePayment(@PathVariable Long id) {
+//        paymentService.deletePayment(id);
+//    }
 }
 
 class Confirmation {

@@ -3,6 +3,7 @@ package com.example.BankOperation.bootstrap;
 import com.example.BankOperation.model.Bank;
 import com.example.BankOperation.model.Client;
 import com.example.BankOperation.model.Credit;
+import com.example.BankOperation.model.Payment;
 import com.example.BankOperation.service.BankService;
 import com.example.BankOperation.service.ClientService;
 import com.example.BankOperation.service.CreditService;
@@ -40,10 +41,16 @@ public class Bootstrap implements CommandLineRunner {
         cr.setClient(cl1);
         creditService.addCredit(cr);
 
-        Bank b = new Bank();
-        b.setBankName("CAB");
-        b.setClient(cl1);
-        b.setCredit(cr);
-        bankService.addBank(b);
+//        Bank b = new Bank();
+//        b.setBankName("CAB");
+//        b.setClient(cl1);
+//        b.setCredit(cr);
+//        bankService.addBank(b);
+
+        Payment p = new Payment();
+        p.setCredit(cr);
+        p.setTarget("For Study");
+        p.setAmount(BigDecimal.valueOf(200));
+
     }
 }

@@ -20,18 +20,40 @@ public class Payment {
     private Credit credit;
     private PaymentStatus paymentStatus;
     private Integer confirmationCode;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "wallet_id")
+//    private Wallet wallet;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "card_id")
+    private Card card;
 
 
     public Payment() {
     }
 
-    public Payment(Long id, String target, BigDecimal amount, LocalDateTime time, Credit credit, PaymentStatus paymentStatus) {
-        this.id = id;
+    public Payment(String target, BigDecimal amount, LocalDateTime time,
+                   Credit credit, Card card) {
         this.target = target;
         this.amount = amount;
         this.time = time;
         this.credit = credit;
-        this.paymentStatus = paymentStatus;
+        this.card = card;
+    }
+
+    public Integer getConfirmationCode() {
+        return confirmationCode;
+    }
+
+    public void setConfirmationCode(Integer confirmationCode) {
+        this.confirmationCode = confirmationCode;
+    }
+
+    public Card getCard() {
+        return card;
+    }
+
+    public void setCard(Card card) {
+        this.card = card;
     }
 
     public Long getId() {

@@ -10,6 +10,7 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String cardName;
+    private Integer cardNumber;
     private BigDecimal balance;
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id")
@@ -18,9 +19,10 @@ public class Card {
     public Card() {
     }
 
-    public Card(Long id, String cardName, BigDecimal balance, Client client) {
+    public Card(Long id, String cardName, Integer cardNumber, BigDecimal balance, Client client) {
         this.id = id;
         this.cardName = cardName;
+        this.cardNumber = cardNumber;
         this.balance = balance;
         this.client = client;
     }

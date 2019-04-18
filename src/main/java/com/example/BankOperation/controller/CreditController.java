@@ -40,4 +40,19 @@ public class CreditController {
     private Credit updateCredit(@RequestBody Credit c) {
         return creditService.updateCredit(c);
     }
+
+    @GetMapping("/unPaidCredits")
+    public List<Credit> getUnPaidCredits() {
+        return this.creditService.getUnPaidCredits();
+    }
+    @GetMapping("/paidCredits")
+    public List<Credit> getPaidCredits(){
+        return this.creditService.getPaidCredits();
+    }
+
+    @GetMapping("/outDatedCredits")
+    public List<Credit> getOutDatedCredits() {
+        return this.creditService.getOutDatedCredits();
+    }
+
 }
